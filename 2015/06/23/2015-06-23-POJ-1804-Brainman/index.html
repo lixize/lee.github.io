@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>POJ 1804 Brainman | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BrainmanTime Limit: 1000MS Memory Limit: 30000KTotal Submissions: 8755 Accepted: 4723 DescriptionBackgroundRaymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spill">
+<meta name="keywords" content="C语言,OJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 1804 Brainman">
+<meta property="og:url" content="http://yoursite.com/2015/06/23/2015-06-23-POJ-1804-Brainman/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="BrainmanTime Limit: 1000MS Memory Limit: 30000KTotal Submissions: 8755 Accepted: 4723 DescriptionBackgroundRaymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spill">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-29T13:32:22.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="POJ 1804 Brainman">
+<meta name="twitter:description" content="BrainmanTime Limit: 1000MS Memory Limit: 30000KTotal Submissions: 8755 Accepted: 4723 DescriptionBackgroundRaymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spill">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="pages-2015-06-23-POJ-1804-Brainman" class="article article-type-pages" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/23/2015-06-23-POJ-1804-Brainman/" class="article-date">
+  <time datetime="2015-06-23T12:11:42.000Z" itemprop="datePublished">2015-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      POJ 1804 Brainman
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Brainman"><a href="#Brainman" class="headerlink" title="Brainman"></a>Brainman</h1><p><em>Time Limit: 1000MS Memory Limit: 30000K<br>Total Submissions: 8755 Accepted: 4723</em></p>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Raymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task.</p>
+<h4 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h4><p>Here’s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example:<br>Start with: 2 8 0 3<br>swap (2 8) 8 2 0 3<br>swap (2 0) 8 0 2 3<br>swap (2 3) 8 0 3 2<br>swap (8 0) 0 8 3 2<br>swap (8 3) 0 3 8 2<br>swap (8 2) 0 3 2 8<br>swap (3 2) 0 2 3 8<br>swap (3 8) 0 2 8 3<br>swap (8 3) 0 2 3 8</p>
+<p>So the sequence (2 8 0 3) can be sorted with nine swaps of adjacent numbers. However, it is even possible to sort it with three such swaps:<br>Start with: 2 8 0 3<br>swap (8 0) 2 0 8 3<br>swap (2 0) 0 2 8 3<br>swap (8 3) 0 2 3 8</p>
+<p>The question is: What is the minimum number of swaps of adjacent numbers to sort a given sequence?Since Charlie does not have Raymond’s mental capabilities, he decides to cheat. Here is where you come into play. He asks you to write a computer program for him that answers the question. Rest assured he will pay a very good prize for it.</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains the number of scenarios.<br>For every scenario, you are given a line containing first the length N (1 &lt;= N &lt;= 1000) of the sequence,followed by the N elements of the sequence (each element is an integer in [-1000000, 1000000]). All numbers in this line are separated by single blanks.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Start the output for every scenario with a line containing “Scenario #i:”, where i is the number of the scenario starting at 1. Then print a single line containing the minimal number of swaps of adjacent numbers that are necessary to sort the given sequence. Terminate the output for the scenario with a blank line.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 2 8 0 3</span><br><span class="line">10 0 1 2 3 4 5 6 7 8 9</span><br><span class="line">6 -42 23 6 28 -100 65537</span><br><span class="line">5 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Scenario #1:</span><br><span class="line">3</span><br><span class="line"></span><br><span class="line">Scenario #2:</span><br><span class="line">0</span><br><span class="line"></span><br><span class="line">Scenario #3:</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">Scenario #4:</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><p>这题求逆序对，可以用改动归并排序来解决。POJ上的题目，原题地址：<a href="http://poj.org/problem?id=1804" target="_blank" rel="noopener">http://poj.org/problem?id=1804</a></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 1000005</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeInversion</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> q, <span class="keyword">int</span> r)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i , j, n, x;</span><br><span class="line">    <span class="keyword">int</span> ar[MAXN];</span><br><span class="line">    <span class="comment">//freopen("input.txt", "r", stdin);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;ar[j]);</span><br><span class="line">        MergeInversion(ar, <span class="number">1</span>, n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Scenario #%d:\n%d\n\n"</span>, i, ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeInversion</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> q;</span><br><span class="line">    <span class="keyword">if</span>(p &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        q = (p + r) / <span class="number">2</span>;</span><br><span class="line">        MergeInversion(a, p, q);</span><br><span class="line">        MergeInversion(a, q + <span class="number">1</span>, r);</span><br><span class="line">        Merge(a, p, q, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> q, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k;</span><br><span class="line">    <span class="keyword">int</span> m[q - p + <span class="number">2</span>], n[r - q + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; q - p + <span class="number">1</span>; i++)</span><br><span class="line">        m[i] = a[p + i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; r - q; j++)</span><br><span class="line">        n[j] = a[q + j + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    m[i] = n[j] = MAX;</span><br><span class="line">    i = j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( k = p; k &lt;= r; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(m[i] &lt;= n[j])</span><br><span class="line">            a[k] = m[i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            a[k] = n[j++];</span><br><span class="line">            ans += q - (p + i) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/06/23/2015-06-23-POJ-1804-Brainman/" data-id="cjglvb1te000t2wftu5u6413e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C语言/">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OJ/">OJ</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/24/2015-06-24-归并排序-Merge-Sort/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          归并排序(Merge Sort)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/21/2015-06-21-选择排序（Selection-Sort）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">选择排序（Selection Sort）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情随笔/">心情随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架学习/">框架学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件作品/">软件作品</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OJ/">OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wxWidgets/">wxWidgets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常配置/">日常配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泽爷工作室/">泽爷工作室</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C语言/" style="font-size: 20px;">C语言</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/OJ/" style="font-size: 15px;">OJ</a> <a href="/tags/OpenWrt/" style="font-size: 10px;">OpenWrt</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/wxWidgets/" style="font-size: 10px;">wxWidgets</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/折腾/" style="font-size: 13.33px;">折腾</a> <a href="/tags/日常配置/" style="font-size: 16.67px;">日常配置</a> <a href="/tags/泽爷工作室/" style="font-size: 10px;">泽爷工作室</a> <a href="/tags/算法/" style="font-size: 18.33px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/18/2017-11-18-解决用Eclipse-EE写JSP代码时，自动括号补全问题/">解决用Eclipse EE写JSP代码时，自动括号补全问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/17/2017-09-17-Ubuntu-16-04-菜单栏消失的解决办法/">Ubuntu 16.04 菜单栏消失的解决办法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/2017-09-16-ubuntu中Codeblock运行中文乱码解决方法/">ubuntu中Codeblock运行中文乱码解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/15/2017-09-15-解决Ubuntu“下载额外数据文件失败-ttf-mscorefonts-installer”的问题/">解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/2017-06-15-Eclipse-Neon配置Mysql/">Eclipse Neon配置Mysql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

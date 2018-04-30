@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Ubuntu 16.04 安装CodeBlocks | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。 在Ubuntu 16.04下就比较简单了。">
+<meta name="keywords" content="日常配置,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04 安装CodeBlocks">
+<meta property="og:url" content="http://yoursite.com/2016/10/14/2016-10-14-Ubuntu-16-04-安装CodeBlocks/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。 在Ubuntu 16.04下就比较简单了。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-29T12:59:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 16.04 安装CodeBlocks">
+<meta name="twitter:description" content="CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。 在Ubuntu 16.04下就比较简单了。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="pages-2016-10-14-Ubuntu-16-04-安装CodeBlocks" class="article article-type-pages" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/14/2016-10-14-Ubuntu-16-04-安装CodeBlocks/" class="article-date">
+  <time datetime="2016-10-14T15:46:00.000Z" itemprop="datePublished">2016-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu 16.04 安装CodeBlocks
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。</p>
+<p>在Ubuntu 16.04下就比较简单了。</p>
+<a id="more"></a>
+<p>传统流程是这样的， 按快捷键<code>Ctrl + Alt + T</code>打开命令行终端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install codeblocks</span><br></pre></td></tr></table></figure></p>
+<p>然后直接在任务栏搜索框上搜索CodeBlocks就能打开使用。</p>
+<p>上面安装的版本一般是13.12算是比较老的版本了，而现在最新的稳定版是16.01。</p>
+<p>CodeBlocks 13.12也不是不能用，当然我也只是用了几分钟，就发现了在有激活项目的时候，也就是在写代码的时候，打开Setting的Editer会卡死。试了几次都是这样，无解。而且，还有一个致命的问题，不能自动缩进。当然这个不能缩进不是bug，只是我们没装全功能。</p>
+<p>于是找了下，找到了解决问题的办法，在这个网址：<a href="https://launchpad.net/~damien-moore/+archive/ubuntu/codeblocks-stable" target="_blank" rel="noopener">https://launchpad.net/~damien-moore/+archive/ubuntu/codeblocks-stable</a> （这个网址可以在CodeBlocks官网的Dowload页面找到）</p>
+<p>首先将软件源添加进来，就是运行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:damien-moore/codeblocks-stable</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>完成之后，不管是不是已经安装了CodeBocks，使用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install codeblocks</span><br></pre></td></tr></table></figure></p>
+<p>都可以获取最新版本的CodeBlcoks。</p>
+<p>获取完成了之后，这个CodeBlocks还是阉割版的。</p>
+<p>还需运行以下 命令来把常用的插件装上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install codeblocks-contrib</span><br></pre></td></tr></table></figure></p>
+<p>然后，重启CodeBlocks就行了。</p>
+<p>以下是我个人的喜好：</p>
+<p>在CodeBlocks菜单Setting-&gt;Edit-&gt;General settings中可以取消设置Brace completion，这个选项是把括号自动补全取消，括号还是自己打才爽啊。</p>
+<p>另外，使用一款好看的字体也是必须的，我个人喜欢Monaco，确实好看。</p>
+<p>Moncao下载链接：<a href="https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf?raw=true" target="_blank" rel="noopener">https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf?raw=true</a></p>
+<p>另外需要注意的是，直接下载双击就能安装。如果没有不能（我就遇到了，直接崩溃，什么字体都装不了），就升级一下，输入命令 sudo apt-get upgrade 升级下软件就能打开了。</p>
+<p>参考博客：<br><a href="http://blog.csdn.net/boya734698063/article/details/38921429" target="_blank" rel="noopener">codeblocks缩进等设置</a><br><a href="http://blog.csdn.net/qq_26990831/article/details/51847416" target="_blank" rel="noopener">ubuntu16.04安装monaco字体</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/14/2016-10-14-Ubuntu-16-04-安装CodeBlocks/" data-id="cjglvb1tq001g2wft93bmhmvk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常配置/">日常配置</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/14/2016-12-14-wxWidgets学习-wxStaticText类/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wxWidgets学习 - wxStaticText类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/05/2015-09-05-献给世界/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">献给世界</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情随笔/">心情随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架学习/">框架学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件作品/">软件作品</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OJ/">OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wxWidgets/">wxWidgets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常配置/">日常配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泽爷工作室/">泽爷工作室</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C语言/" style="font-size: 20px;">C语言</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/OJ/" style="font-size: 15px;">OJ</a> <a href="/tags/OpenWrt/" style="font-size: 10px;">OpenWrt</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/wxWidgets/" style="font-size: 10px;">wxWidgets</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/折腾/" style="font-size: 13.33px;">折腾</a> <a href="/tags/日常配置/" style="font-size: 16.67px;">日常配置</a> <a href="/tags/泽爷工作室/" style="font-size: 10px;">泽爷工作室</a> <a href="/tags/算法/" style="font-size: 18.33px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/18/2017-11-18-解决用Eclipse-EE写JSP代码时，自动括号补全问题/">解决用Eclipse EE写JSP代码时，自动括号补全问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/17/2017-09-17-Ubuntu-16-04-菜单栏消失的解决办法/">Ubuntu 16.04 菜单栏消失的解决办法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/2017-09-16-ubuntu中Codeblock运行中文乱码解决方法/">ubuntu中Codeblock运行中文乱码解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/15/2017-09-15-解决Ubuntu“下载额外数据文件失败-ttf-mscorefonts-installer”的问题/">解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/2017-06-15-Eclipse-Neon配置Mysql/">Eclipse Neon配置Mysql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

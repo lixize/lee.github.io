@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>浅谈const关键字与指针、define、typedef混用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。1234const int * a = &amp;amp;b;int const * a = &amp;amp;b;int * const a = &amp;amp;b;const int * const a = &amp;amp;b; 区分它们是非常简单的，只需要下面记住两条规则： 如果const位于">
+<meta name="keywords" content="C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈const关键字与指针、define、typedef混用">
+<meta property="og:url" content="http://yoursite.com/2014/02/08/2014-02-08-浅谈const关键字与指针、define、typedef混用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。1234const int * a = &amp;amp;b;int const * a = &amp;amp;b;int * const a = &amp;amp;b;const int * const a = &amp;amp;b; 区分它们是非常简单的，只需要下面记住两条规则： 如果const位于">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-29T16:09:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈const关键字与指针、define、typedef混用">
+<meta name="twitter:description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。1234const int * a = &amp;amp;b;int const * a = &amp;amp;b;int * const a = &amp;amp;b;const int * const a = &amp;amp;b; 区分它们是非常简单的，只需要下面记住两条规则： 如果const位于">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="pages-2014-02-08-浅谈const关键字与指针、define、typedef混用" class="article article-type-pages" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/08/2014-02-08-浅谈const关键字与指针、define、typedef混用/" class="article-date">
+  <time datetime="2014-02-08T07:19:00.000Z" itemprop="datePublished">2014-02-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浅谈const关键字与指针、define、typedef混用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * a = &amp;b;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * a = &amp;b;</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> a = &amp;b;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> a = &amp;b;</span><br></pre></td></tr></table></figure></p>
+<p>区分它们是非常简单的，只需要下面记住两条规则：</p>
+<p>如果const位于星号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；<br>如果const位于星号的右侧，const就是修饰指针本身，即指针本身是常量。<br>于是乎，刚才的四条声明也就容易区分了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * a = &amp;b; <span class="comment">//const在*的左边 ,用来修饰a所指向的地址的值,*a为常量</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * a = &amp;b; <span class="comment">//这句与上句是相同的，const在*的左边</span></span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> a = &amp;b;  <span class="comment">//const在*的右边 那么const修饰的是a本身, a是常量</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> a = &amp;b; <span class="comment">//a与*a均为常量，都不能被改变 </span></span><br><span class="line">如果还是不明白，请上机测试下，分别给a和*a赋值，常量一般情况是不能被改变的（当然有特殊情况，以后再说）。</span><br></pre></td></tr></table></figure></p>
+<p>我这里再说下const与define、typedef，是否跟我们想象的那样。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* pint; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PINT int*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pint m = &amp;k;</span><br><span class="line"><span class="keyword">const</span> PINT n= &amp;k;</span><br></pre></td></tr></table></figure></p>
+<p>我们用一个完整的程序（其实有错误，等下就知道了）来测试。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* pint; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PINT int*</span></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> pint m = &amp;k; </span><br><span class="line"><span class="keyword">const</span> PINT n= &amp;k; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    *m = <span class="number">3</span>;</span><br><span class="line">    *n = <span class="number">3</span>;</span><br><span class="line">    m = &amp;b;</span><br><span class="line">    n = &amp;b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>放上面的代码上去测试，我们看到编译出错了,位置是<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*n = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
+<p>很明显*n是不可改变的，我们自己也可以很容易推是我出来。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PINT int*</span></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> PINT n= &amp;k; <span class="comment">//等价于const int * n = &amp;k; </span></span><br><span class="line"><span class="comment">//const PINT n= &amp;k; 被预处理为const int * n = &amp;k;</span></span><br></pre></td></tr></table></figure></p>
+<p>我们接着这把*n = 3;注释掉，再编译一次，发现又出错了，错误的地方是<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = &amp;b;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说明指针m是常量，这倒是出乎意料了，<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* pint;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> pint m = &amp;k; </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* m = &amp;k; <span class="comment">//这两句竟然不是相等的！为什么呢？</span></span><br></pre></td></tr></table></figure></p>
+<p>其实这里很多人把typedef当成了define。<br>typedef不是define，typedef是别名。<br>我们仔细看下pint, pint是指针类型，const的指针当然是int *const<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* pint;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> pint m = &amp;k; <span class="comment">//相当于int* const m = &amp;k; </span></span><br><span class="line"><span class="comment">//typedef不是宏代换，ping是个指针类型，const的指针是int *const</span></span><br></pre></td></tr></table></figure></p>
+<p>好了，其实const关键字与指针、define、typedef混用也不是太麻烦嘛。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/02/08/2014-02-08-浅谈const关键字与指针、define、typedef混用/" data-id="cjglvb1t5000f2wft6aik83dy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C语言/">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/02/23/2014-02-23-Kruskal算法的C语言实现（并查集版）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Kruskal算法的C语言实现（并查集版）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/01/2014-02-01-Prim算法的C语言实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Prim算法的C语言实现</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情随笔/">心情随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架学习/">框架学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件作品/">软件作品</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OJ/">OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wxWidgets/">wxWidgets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常配置/">日常配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泽爷工作室/">泽爷工作室</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C语言/" style="font-size: 20px;">C语言</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/OJ/" style="font-size: 15px;">OJ</a> <a href="/tags/OpenWrt/" style="font-size: 10px;">OpenWrt</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/wxWidgets/" style="font-size: 10px;">wxWidgets</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/折腾/" style="font-size: 13.33px;">折腾</a> <a href="/tags/日常配置/" style="font-size: 16.67px;">日常配置</a> <a href="/tags/泽爷工作室/" style="font-size: 10px;">泽爷工作室</a> <a href="/tags/算法/" style="font-size: 18.33px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/18/2017-11-18-解决用Eclipse-EE写JSP代码时，自动括号补全问题/">解决用Eclipse EE写JSP代码时，自动括号补全问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/17/2017-09-17-Ubuntu-16-04-菜单栏消失的解决办法/">Ubuntu 16.04 菜单栏消失的解决办法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/2017-09-16-ubuntu中Codeblock运行中文乱码解决方法/">ubuntu中Codeblock运行中文乱码解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/15/2017-09-15-解决Ubuntu“下载额外数据文件失败-ttf-mscorefonts-installer”的问题/">解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/2017-06-15-Eclipse-Neon配置Mysql/">Eclipse Neon配置Mysql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

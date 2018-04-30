@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>wxWidgets学习 - wxStaticText类 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="wxStaticText类1#include &amp;lt;wx/stattext.h&amp;gt; 静态文本控件，显示一行或者多行只读文本。wxStaticText控件支持三种典型的文本对齐。 样式(Styles)这个类支持以下样式：  wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_N">
+<meta name="keywords" content="学习,wxWidgets">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wxWidgets学习 - wxStaticText类">
+<meta property="og:url" content="http://yoursite.com/2016/12/14/2016-12-14-wxWidgets学习-wxStaticText类/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="wxStaticText类1#include &amp;lt;wx/stattext.h&amp;gt; 静态文本控件，显示一行或者多行只读文本。wxStaticText控件支持三种典型的文本对齐。 样式(Styles)这个类支持以下样式：  wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_N">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-29T13:05:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wxWidgets学习 - wxStaticText类">
+<meta name="twitter:description" content="wxStaticText类1#include &amp;lt;wx/stattext.h&amp;gt; 静态文本控件，显示一行或者多行只读文本。wxStaticText控件支持三种典型的文本对齐。 样式(Styles)这个类支持以下样式：  wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_N">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="pages-2016-12-14-wxWidgets学习-wxStaticText类" class="article article-type-pages" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/14/2016-12-14-wxWidgets学习-wxStaticText类/" class="article-date">
+  <time datetime="2016-12-14T15:59:00.000Z" itemprop="datePublished">2016-12-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架学习/">框架学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wxWidgets学习 - wxStaticText类
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="wxStaticText类"><a href="#wxStaticText类" class="headerlink" title="wxStaticText类"></a>wxStaticText类</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;wx/stattext.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>静态文本控件，显示一行或者多行只读文本。<br>wxStaticText控件支持三种典型的文本对齐。</p>
+<h3 id="样式-Styles"><a href="#样式-Styles" class="headerlink" title="样式(Styles)"></a>样式(Styles)</h3><p>这个类支持以下样式：</p>
+<ul>
+<li><strong>wxALIGN_LEFT</strong>： 文本向左对齐。</li>
+<li><strong>wxALIGN_RIGHT</strong>： 文本向右对齐。</li>
+<li><strong>wxALIGN_CENTRE_HORIZONTAL</strong>： 文本水平居中。</li>
+<li><strong>wxST_NO_AUTORESIZE</strong>： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。</li>
+<li><strong>wxST_ELLIPSIZE_START</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。</li>
+<li><strong>wxST_ELLIPSIZE_MIDDLE</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。</li>
+<li><strong>wxST_ELLIPSIZE_END</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。</li>
+</ul>
+<h3 id="公开成员函数（Public-Member-Functions"><a href="#公开成员函数（Public-Member-Functions" class="headerlink" title="公开成员函数（Public Member Functions)"></a>公开成员函数（Public Member Functions)</h3><p>wxStaticText()<br>默认构造函数</p>
+<p>bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)<br>构造函数，创建和显示文本控件。</p>
+<p>bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)<br>生成功能，用于两步骤构建。</p>
+<p>bool IsEllipsized () const<br>如果此控件的窗口样式包含wxST_ELLIPSIZE_START，wxST_ELLIPSIZE_MIDDLE或wxST_ELLIPSIZE_END样式之一，则返回true。</p>
+<p>void Wrap (int width)<br>这个函数折叠控件标签内容，以使其每条线最多宽度为像素宽（如果可能的话，这些线在字边界处断开，因此如果单词太长，则可能不是这样）。</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 两步创建模式</span></span><br><span class="line">wxStaticText* StaticText1 = <span class="keyword">new</span> wxStaticText();</span><br><span class="line">StaticText1-&gt;Create(<span class="keyword">this</span>, STATIC_TEXT_1, <span class="string">"这是一个测试"</span>, wxDefaultPosition, wxDefaultSize);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单步步创建模式</span></span><br><span class="line">wxStaticText* StaticText2 = <span class="keyword">new</span> wxStaticText(<span class="keyword">this</span>, STATIC_TEXT_2, <span class="string">"test"</span>, wxDefaultPosition, wxDefaultSize);</span><br><span class="line"></span><br><span class="line">StaticText1-&gt;SetLabel(<span class="string">"Abc-test"</span>);  <span class="comment">// 设置标签</span></span><br><span class="line">wxString str = StaticText1-&gt;GetLabelText(); <span class="comment">// 获取标签内容</span></span><br><span class="line">StaticText1-&gt;SetForegroundColour(*wxRED);   <span class="comment">// 设置文本颜色</span></span><br><span class="line">StaticText1-&gt;SetBackgroundColour(*wxWHITE); <span class="comment">// 设置背景颜色</span></span><br><span class="line">wxSize tsize = StaticText1-&gt;GetSizeFromTextSize(<span class="number">100</span>, <span class="number">50</span>); <span class="comment">// 获取文本最佳大小</span></span><br><span class="line">StaticText2-&gt;SetLabelText(str);</span><br><span class="line">StaticText2-&gt;SetSize(tsize); <span class="comment">// 设置文本框大小</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/14/2016-12-14-wxWidgets学习-wxStaticText类/" data-id="cjglvb1tt001l2wftdzuefgk8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wxWidgets/">wxWidgets</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/22/2017-04-22-使用OpenVPN对校园网内网穿透/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用OpenVPN对校园网内网穿透
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/14/2016-10-14-Ubuntu-16-04-安装CodeBlocks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu 16.04 安装CodeBlocks</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情随笔/">心情随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架学习/">框架学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法学习/">算法学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件作品/">软件作品</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OJ/">OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wxWidgets/">wxWidgets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常配置/">日常配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泽爷工作室/">泽爷工作室</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C语言/" style="font-size: 20px;">C语言</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/OJ/" style="font-size: 15px;">OJ</a> <a href="/tags/OpenWrt/" style="font-size: 10px;">OpenWrt</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/wxWidgets/" style="font-size: 10px;">wxWidgets</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/折腾/" style="font-size: 13.33px;">折腾</a> <a href="/tags/日常配置/" style="font-size: 16.67px;">日常配置</a> <a href="/tags/泽爷工作室/" style="font-size: 10px;">泽爷工作室</a> <a href="/tags/算法/" style="font-size: 18.33px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/18/2017-11-18-解决用Eclipse-EE写JSP代码时，自动括号补全问题/">解决用Eclipse EE写JSP代码时，自动括号补全问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/17/2017-09-17-Ubuntu-16-04-菜单栏消失的解决办法/">Ubuntu 16.04 菜单栏消失的解决办法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/2017-09-16-ubuntu中Codeblock运行中文乱码解决方法/">ubuntu中Codeblock运行中文乱码解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/15/2017-09-15-解决Ubuntu“下载额外数据文件失败-ttf-mscorefonts-installer”的问题/">解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/2017-06-15-Eclipse-Neon配置Mysql/">Eclipse Neon配置Mysql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

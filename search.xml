@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[解决用Eclipse EE写JSP代码时，自动括号补全问题]]></title>
+    <url>%2F2017%2F11%2F18%2F2017-11-18-%E8%A7%A3%E5%86%B3%E7%94%A8Eclipse-EE%E5%86%99JSP%E4%BB%A3%E7%A0%81%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%8B%AC%E5%8F%B7%E8%A1%A5%E5%85%A8%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[这个问题其实是烦恼了挺久的，就我本人而言，通常不用括号补全，我觉得手打比较完整，在学JSP以前，用Eclipse虽然他带括号补全，但是也不影响手打，比如打括号时，不会出现三个括号。而JSP的Editor就比较烦人了。比如打&lt;%%&gt;会出现&lt;%%&gt;&gt;。 找了许久，解决办法如下Window-&gt;Preferences-&gt;Web-&gt;JSP Files-&gt;Editor-&gt;Typing 然后把Automatically close下面的勾全部取消，然后Apply。]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日常配置</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 16.04 菜单栏消失的解决办法]]></title>
+    <url>%2F2017%2F09%2F17%2F2017-09-17-Ubuntu-16-04-%E8%8F%9C%E5%8D%95%E6%A0%8F%E6%B6%88%E5%A4%B1%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[今天无缘无故，ubuntu的菜单栏就消失了。找了以下终于找到了解决办法。 打开命令行窗口，输入以下语句：12dconf reset -f /org/compiz/setsid unity 然后，菜单栏就回来了。]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>折腾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu中Codeblock运行中文乱码解决方法]]></title>
+    <url>%2F2017%2F09%2F16%2F2017-09-16-ubuntu%E4%B8%ADCodeblock%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[中文乱码解决方案“设置”菜单下选“环境设置”： “常规设置”，最下面”启动控制台程序的终端”，选择gnome-terminal -t $TITLE -x原来是xterm -T $TITLE –e 原地址：Ubuntu安装codeblocks 汉化 中文乱码 颜色主题 中文显示不全]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>日常配置</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题]]></title>
+    <url>%2F2017%2F09%2F15%2F2017-09-15-%E8%A7%A3%E5%86%B3Ubuntu%E2%80%9C%E4%B8%8B%E8%BD%BD%E9%A2%9D%E5%A4%96%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E5%A4%B1%E8%B4%A5-ttf-mscorefonts-installer%E2%80%9D%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[最近开机总是遇到一段提示，内容大概是这样： 下载额外数据文件失败以下软件包要求安装后下载附加数据，但其数据无法下载或无法处理。ttf-mscorefonts-installer稍后系统将自动重试下载，您也可以手工立即重试。执行此命令需要有活动的网络连接。 开始也挺烦恼，总是解决不掉。 后台发现/usr/share/package-data-downloads有一个文件ttf-mscorefonts-installer，用gedit打开，有一大串地址。其实解决办法是，手动把这些地址链接的文件下载下来，然后放到一个文件夹中。 如果懒得下载，也可以使用已下载好的文件，百度网盘： https://pan.baidu.com/s/1jIcfEMa 密码: rbeh 手动在命令行执行sudo dpkg-reconfigure ttf-mscorefonts-installer这条语句手动指定文件夹的位置,重新配置下。 注意：在命令行不支持用鼠标点击，如果移动请使用tab键。 然后输入以下命令123456cd /usr/share/package-data-downloads/sudo rm ttf-mscorefonts-installercd /var/lib/update-notifier/package-data-downloads/sudo rm ttf-mscorefonts-installercd /var/lib/update-notifier/user.d/sudo rm data-downloads-failed 重启后应该就没有烦人的提示了。]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>折腾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Eclipse Neon配置Mysql]]></title>
+    <url>%2F2017%2F06%2F15%2F2017-06-15-Eclipse-Neon%E9%85%8D%E7%BD%AEMysql%2F</url>
+    <content type="text"><![CDATA[1# 要下载的资料MySQL Connector/J 6.0下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/ 2# 解压文件解压mysql-connector-java-6.0.6.zip，可得如下文件： 3# 放置文件假如在D盘创建一个文件夹java，然后在java文件夹里面创建jdbc-drivers文件夹，将mysql-connector-java-6.0.6-bin.jar放入此文件夹。可以得到此文件的路径，记住这个文件的位置，下面还需要用到。D:\java\jdbc-drivers\mysql-connector-java-6.0.6-bin.jar其实文件路径是随意的，放在一个可以找得到的文件夹就可以了。 4# 在Eclipse上配置mysql库文件打开Eclipse在菜单里找到Window–&gt;Preferences打开 在设置界面里面找到Java–&gt;Build Path–&gt;User Libraries，打开如图所示： 点击New新建，在输入框输入jdbc，然后下面的System library勾上。 5# 导入jar包接下类点击Add External JARs，将刚才的mysql-connector-java-6.0.6-bin.jar这个文件选中，然后最后OK保存设置就可以了。 6# 在Eclipse项目上使用Mysql库文件在项目上右键弹出菜单选择Build Path然后选择Add Libraries 然后在弹出的选项中选则，User Libraries，接着勾选jdbc这个库，最后点Finsh完成就可以成功在项目中使用mysql进行连接数据库了。 7# 测试运行 注意：6.0版本的MySQL Connector/J 6.0与之前的版本有很大区别，不兼容。 可以查看官方文档：https://dev.mysql.com/doc/connector-j/6.0/en/]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日常配置</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CodeBlocks 16.01+wxWidgets 3.03配置]]></title>
+    <url>%2F2017%2F06%2F07%2F2017-06-07-CodeBlocks-16-01-wxWidgets-3-03%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[1# 下载CodeBlocks 16.01和wxWidgets 3.0.3CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/ 最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。 下载后得到两个文件： codeblocks-16.01mingw-setup.exe wxWidgets-3.0.3.zip 2# 安装CodeBlocks 16.01和解压wxWidgets 3.0.3将CodeBlocks安装到F:\Program Files (x86)\CodeBlocks将wxWidgets解压到F:\wxWidgets-3.0.3目录下PS：其实这个随意，只要安装到找得到的地方就好。 3# 设置环境变量在编译wxWidgets之前首先要设置一下MinGw环境变量，CodeBlocks 16.01中有自带gcc 4.9.2 这个版本的编译器。比如我的CodeBlocks装在F:\Program Files (x86)\CodeBlocks这个目录下，那么将;F:\Program Files (x86)\CodeBlocks\MinGW\bin;加入Path路径中，保存。注意：环境变量每个路径以分号分隔的，如果前面路径结尾已经有了分号，那么只需要一个分号。 在命令行下输入gcc –v有如下信息：123456789C:\Users\Administrator&gt;gcc -vUsing built-in specs.COLLECT_GCC=gccCOLLECT_LTO_WRAPPER=F:/Program\ Files\ (x86)/CodeBlocks/MinGW/bin/../libexec/gcc/mingw32/4.9.2/lto-wrapper.exeTarget: mingw32…Thread model: posixgcc version 4.9.2 (tdm-1) 看最末尾那行gcc version是4.9.2那么就是成功配置了。wxWidgets对编译器的版本也有要求的，如果是新手，建议使用CodeBlocks自带的编译器。 4# 编译wxWidgets 3.0.3在命令进入wxWigets的build/msw文件夹，例如我的是F:\wxWidgets-3.0.3\build\msw这个路径12F:cd F:\wxWidgets-3.0.3\build\msw 接下来就是make了。 编译命令如下：12mingw32-make -j2 -f makefile.gcc BUILD=release SHARED=0 MONOLITHIC=1 UNICODE=1mingw32-make -j2 -f makefile.gcc BUILD=debug SHARED=0 MONOLITHIC=1 UNICODE=1 这里使用开两个线程来编译，加入参数-j2，以加快速度，第一次运行会直接提示出错，再运行同样的命令一次就不会出问题了。当然如果不加-j2，也没问题，以正常的速度编译。值得一说的是，可以开两个命令行窗口同时编译，运行上面命令。比如一个窗口编译release版本，一个窗口编译debug版本。速度也能大大加快。 还有其他的一些参数解释如下：BUILDBUILD控制wxWidgets构建调试版本（BUILD=debug）或者是发布版本（BUILD=release）。绝大多数情况下你只需要 wxWidgets的发布版本就可以了，因为你应该不想要去调试wxWidgets自身，同时你依然可以通过链接wxWidgets的发布版本来构建你自己的程序的调试版本。 SHAREDSHARED控制wxWidgets是构建DLL（SHARED=1）还是静态库（SHARED=0）。利用构建的DLL，主程序构建时间较快，可执行文件更小。但是可执行文件加上wxWidgets DLL的总大小更大，但是不同的可执行文件可以使用同一个DLL。 MONOLITHICMONOLITHIC控制是构建一个单一的库（MONOLITHIC=1）还是多个组件库（MONOLITHIC=0）。使用单一构建，项目的设置 和开发会更加简单，如果你同时使用DLL构建的话，你只需要分发一个DLL文件。如果使用非单一构建（multilib），会构建出多个不同的库同时你可 以避免将整个wxWidgets的基本代码链接到主程序，就可以去掉不需要的库。同时你也必须确保你选择了正确的组件库。 UNICODEUNICODE控制wxWidgets以及你的程序是否使用支持Unicode的宽字符串。 5# 配置CodeBlocks编译好了以后还有在CodeBlocks上配置一下。在Settings--&gt;Global Variable Editor上Current Variable这个选项上New，输入wx。然后设置下base、include和lib，例如我的wxWidgets安装位置是F:\wxWidgets-3.0.3 6# 进行测试下面是新建工程测试。有一个事情是必须记住的，要记住编译时的参数。上面的命令一共编译了两个版本，release和debug版，在构建项目的时候，两个都可以勾选。而且，SHARED=0代表使用静态库，Use wxWidgets DLL不勾选，MONOLITHIC=1 表示使用单一的库，wxWidgets is build as a monolithic library就要勾选，同理UNICODE=1表示支持Unicode，这样Enable unicode也要勾选。 7# 正常使用接下来可以随意使用了。]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘]]></title>
+    <url>%2F2017%2F06%2F04%2F2017-06-04-Ubuntu-14-04-16-04-%E5%BC%80%E5%90%AFroot%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95-%E8%87%AA%E5%8A%A8%E5%BC%80%E5%90%AF%E5%B0%8F%E9%94%AE%E7%9B%98%2F</url>
+    <content type="text"><![CDATA[1# 给root用户设置密码12sudo passwd rootsudo apt-get install numlockx 2# 使用命令行登录root12su -nautilus 这样弹出来的文件管理器就有root权限了(当然只是临时的)，为了方便改文件 3# 改文件在/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf文件增加两行12greeter-show-manual-login=trueallow-guest=false 在/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf文件增加一行1greeter-setup-script=/usr/bin/numlockx on 4# 重启重启完以后就可以禁用guest账户和使用root登录了 5# 可能出现的问题使用root用户登录可能会出现Error found when loading /root/.profile stdin: is not a tty这样的错误 解决办法如下：修改/root/.profile文件，在文件管理器中设置 编辑–首选项 勾选 显示隐藏和备份文件 就可以查看这个文件，用vi修改也行。把mesg n进行注释，增加一行tty -s &amp;&amp; mesg n保存，注销后重新登录问题解决。]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>折腾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用OpenVPN对校园网内网穿透]]></title>
+    <url>%2F2017%2F04%2F22%2F2017-04-22-%E4%BD%BF%E7%94%A8OpenVPN%E5%AF%B9%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%2F</url>
+    <content type="text"><![CDATA[目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。 #00 前言最近对穿透学校的内网有需求，于是决定搭建环境。网上的教程大多都是客户端访问服务器的内网，但这个教程是，穿透客户端所在内网，由服务器访问客户端的内网。 服务器IP：x.x.x.x客户端IP：192.168.1.1 所在网段 192.168.1.0/24学校内网网段：10.20.208.0/24 路由器通过学校内网IP上网，此处省去路由端802.1X的认证过程，假设直接就能通过学校的认证并且获取到一个ip。 在路由器上是可以直接访问10.20.208.0/24网段的，但是10.20.208.x是一个内网的地址，服务器所在环境是外网无法访问。 如果是对内网的某一个某个网站进行穿透，建议使用ngrok，这里是对整个网段的穿透。 #01 OpenVPN Server和Client所用的环境 OpenVpn Sever使用的服务器（CentOS 7.0） OpenVpn Client放在Openwrt(Pandorabox 16.10 stable, Openwrt 17.01)路由器上运行 #02 安装OpenVPN(服务器端)登录服务器端，输入以下命令进行openvpn的安装1yum install -y openvpn 或者是到openvpn的官方网站下载源码 https://openvpn.net/index.php/open-source/downloads.html1wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.1.tar.gz 然后按照下面的命令进行安装12345tar -zxf openvpn-2.4.1.tar.gzcd openvpn-2.4.1./configuremakemake install 安装完成openvpn之后，输入以下命令就可看到版本信息123456openvpn --versionOpenVPN 2.4.1 x86_64-redhat-linux-gnu [Fedora EPEL patched] [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] built on Apr 3 2017library versions: OpenSSL 1.0.1e-fips 11 Feb 2013, LZO 2.06Originally developed by James YonanCopyright (C) 2002-2017 OpenVPN Technologies, Inc. &lt;sales@openvpn.net&gt;...... #03 下载easy-rsa1234567wget -c https://github.com/OpenVPN/easy-rsa/archive/master.zipunzip master.zipmv easy-rsa-master easy-rsacp -rf easy-rsa /etc/openvpncd /etc/openvpn/easy-rsacd /etc/openvpn/easy-rsa/easyrsa3mv vars.example vars 解除注释之后，修改如下内容(填写自己的信息):1234567vi varsset_var EASYRSA_REQ_COUNTRY "CN"set_var EASYRSA_REQ_PROVINCE "Guangdong"set_var EASYRSA_REQ_CITY "Dongguan"set_var EASYRSA_REQ_ORG "DotTimes Co"set_var EASYRSA_REQ_EMAIL "xxx@xxxx.com"set_var EASYRSA_REQ_OU "Zeyes" 修改完之后，按下ESC，然后输入:wq保存 #04 配置证书文件1. 初始化配置1./easyrsa init-pki 如果成功的话，会在当前目录下创建pki/{reqs,private}目录，用于保存证书文件。 2. 创建根证书1./easyrsa build-ca 创建过程中需要输入根证书的密码以及Common Name。如果创建成功，则会在pki/private/目录下创建ca.key私钥文件以及pki/目录下创建ca.crt证书文件。 3. 创建服务器证书1./easyrsa build-server-full server nopass 创建过程和根证书创建类似，需要输入证书的密码以及上一个步骤创建根证书的密码。如果创建成功，则会在pki/private目录创建server.key私钥文件。在pki/issued目录创建server.crt证书文件。 4. 创建dh证书1./easyrsa gen-dh DH parameters of size 2048 created at /usr/local/easy-rsa-master/easyrsa3/pki/dh.pem 5. 创建客户端证书./easyrsa build-client-full openwrt nopass # openwrt是用户名，也可以输入其他的, nopass表示不需要密码创建过程要输入ca证书的密码（第2步的密码） 6. server端的文件，复制到/etc/openvpn/下12345cd /etc/openvpn/cp /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt .cp /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt .cp /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key .cp /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem ./dh2048.pem 7. client端的文件, 然后下载 (放到一个可以下载的地方，注意权限)1234567cd /data/wwwroot/default/mkdir clientcp /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt ./client/cp /etc/openvpn/easy-rsa/easyrsa3/pki/issued/openwrt.crt ./client/cp /etc/openvpn/easy-rsa/easyrsa3/pki/private/openwrt.key ./client/chown -R www.www clientchmod 644 ./client/* 我这里是放在服务器网站目录下，如果有其他选择，可以选择其他方便进行下载的地方 #05 配置OpenVPN Server1cd /etc/openvpn 1. 将server配置模板复制到/etc/openvpn下1cp /usr/share/doc/openvpn-2.4.1/sample/sample-config-files/server.conf . 2. 编辑server.conf123456789101112131415161718192021222324252627vi server.conflocal xxx.xxx.xxx.xxx # 这里填服务器的外网ipport 1194proto udpdev tunca ca.crtcert server.crtkey server.keydh dh2048.pemserver 10.8.0.0 255.255.255.0ifconfig-pool-persist ipp.txtclient-config-dir ccdroute 10.20.208.0 255.255.255.0 # 学校内网网段route 192.168.1.0 255.255.255.0 # 路由器网段client-to-clientkeepalive 10 120;tls-auth ta.key 0cipher AES-256-CBC # 加密方式comp-lzo;user nobody;group nobodypersist-keypersist-tunstatus openvpn-status.logverb 3explicit-exit-notify 1 #06 配置ccd文件夹1234567cd /etc/openvpnmkdir ccdcd ccdvi openwrt # 填你的生成的客户端证书名iroute 10.20.208.0 255.255.255.0 # 学校内网网段iroute 192.168.1.0 255.255.255.0 # 路由器网段ifconfig-push 10.8.0.2 10.8.0.1 #07 iptables 设置（根据实际情况）123456789101112131415161718192021yum install -y iptables-servicessystemctl enable iptablessystemctl stop firewalldsystemctl start iptablesiptables -L -niptables -P INPUT ACCEPTiptables -Fiptables -Xiptables -A INPUT -i lo -j ACCEPTiptables -A INPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPTiptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPTiptables -A INPUT -p tcp --dport 22 -j ACCEPTiptables -A INPUT -p tcp --dport 21 -j ACCEPTiptables -A INPUT -p tcp --dport 443 -j ACCEPTiptables -A INPUT -p tcp --dport 80 -j ACCEPTiptables -A INPUT -p tcp --dport 3306 -j ACCEPTiptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o tun+ -j MASQUERADEiptables -t nat -A POSTROUTING -s 10.20.208.0/24 -o tun+ -j MASQUERADEiptables -A FORWARD -d 10.20.208.0/24 -o tun+ -j ACCEPTservice iptables saveservice iptables restart #08 服务器设置1. 设置允许转发123vi /etc/sysctl.confnet.ipv4.ip_forward = 1sysctl -p # 立即生效 2. 设置openvpn开机启动123systemctl -f enable openvpn@server.servicesystemctl start openvpn@server.servicesystemctl restart openvpn@server.service #09 下载证书总共有三个文件 ca.crt openwrt.crt openwrt.key #10 客户端设置(Pandorabox, Openwrt 17.01)1. 安装openvpn以及luci web配置界面还有中文1234opkg updateopkg install openvpn-opensslopkg install luci-app-openvpnopkg install luci-i18n-openvpn-zh-cn 2. 设置允许转发默认情况下，防火墙是禁止转发的。所以登录路由器的web设置界面luci, 找到网络-防火墙-一般设置，可以看到转发是拒绝的，把转发设置成接受，然后点击保存并应用。 #11 测试OpenVPN(客户端)能否正常运行（此步可以省略）1. 预先编辑好文件client.conf，然后传到/tmp目录，文件内容如下：123456789101112131415161718192021222324252627client;dev tapdev tun;dev-node MyTap;proto tcpproto udpremote x.x.x.x 1194 # 这里修改为你的服务器ip;remote my-server-2 1194;remote-randomresolv-retry infinitenobind;user nobody;group nobodypersist-keypersist-tun;http-proxy-retry # retry on connection failures;http-proxy [proxy server] [proxy port #];mute-replay-warningsca ca.crtcert openwrt.crtkey openwrt.keyremote-cert-tls server;tls-auth ta.key 1cipher AES-256-CBCcomp-lzoverb 3;mute 20 2. 测试运行，如果不成功会有提示1openvpn --config client.conf 3. 在服务器端输入以下命令测试123ping 10.8.0.2 -c 4ping 192.168.1.1 -c 4ping 10.20.208.12 -c 4 如果能够正常运行，说明客户端和配置都没有问题 #11 配置OpenVPN Client1. 使用scp，把证书传到/etc/luci-uploads/文件夹(没有就创建), 传好后目录内容如下：123/etc/luci-uploads/ca.crt/etc/luci-uploads/openwrt.crt/etc/luci-uploads/openwrt.key 2. 登录ssh，编辑openvpn配置文件1vi /etc/config/openvpn 把以下内容添加到最后面，并保存123456789101112131415161718192021config openvpn 'openwrt' option enabled '1' option float '1' option client '1' option nobind '1' option comp_lzo 'yes' option reneg_sec '0' option dev 'tun' option verb '3' option persist_tun '1' option persist_key '1' option remote_cert_tls 'server' list remote 'x.x.x.x 1194' # 此处要设置成服务器的地址 option ca '/etc/luci-uploads/ca.crt' option cert '/etc/luci-uploads/openwrt.crt' option key '/etc/luci-uploads/openwrt.key' option resolv_retry 'infinite' option keepalive '10 120' option log '/tmp/openvpn.log' option log_append '/tmp/openvpn.log' option cipher 'AES-256-CBC' #12 启动Openvpn Client登录openwrt的Web设置界面，找到openvpn，点击启用，然后再点start就可以了。如果有配置问题，可以输入命令查看日志1cat /tmp/openvpn.log 到此，服务端和客户端都已经搭建完成。如果有需要可以再测试一下连通。 #13 参考文章ECS服务器OPENVPN搭建，方便管理所有内网服务器阿里云CentOS服务器上搭建openvpn通过OpenWrt路由器和OpenVPN实现两地局域网互联]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>日常配置</tag>
+        <tag>OpenWrt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[wxWidgets学习 - wxStaticText类]]></title>
+    <url>%2F2016%2F12%2F14%2F2016-12-14-wxWidgets%E5%AD%A6%E4%B9%A0-wxStaticText%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[wxStaticText类1#include &lt;wx/stattext.h&gt; 静态文本控件，显示一行或者多行只读文本。wxStaticText控件支持三种典型的文本对齐。 样式(Styles)这个类支持以下样式： wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions)wxStaticText()默认构造函数 bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)构造函数，创建和显示文本控件。 bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)生成功能，用于两步骤构建。 bool IsEllipsized () const如果此控件的窗口样式包含wxST_ELLIPSIZE_START，wxST_ELLIPSIZE_MIDDLE或wxST_ELLIPSIZE_END样式之一，则返回true。 void Wrap (int width)这个函数折叠控件标签内容，以使其每条线最多宽度为像素宽（如果可能的话，这些线在字边界处断开，因此如果单词太长，则可能不是这样）。 Example1234567891011121314// 两步创建模式wxStaticText* StaticText1 = new wxStaticText();StaticText1-&gt;Create(this, STATIC_TEXT_1, "这是一个测试", wxDefaultPosition, wxDefaultSize);// 单步步创建模式wxStaticText* StaticText2 = new wxStaticText(this, STATIC_TEXT_2, "test", wxDefaultPosition, wxDefaultSize);StaticText1-&gt;SetLabel("Abc-test"); // 设置标签wxString str = StaticText1-&gt;GetLabelText(); // 获取标签内容StaticText1-&gt;SetForegroundColour(*wxRED); // 设置文本颜色StaticText1-&gt;SetBackgroundColour(*wxWHITE); // 设置背景颜色wxSize tsize = StaticText1-&gt;GetSizeFromTextSize(100, 50); // 获取文本最佳大小StaticText2-&gt;SetLabelText(str);StaticText2-&gt;SetSize(tsize); // 设置文本框大小]]></content>
+      <categories>
+        <category>框架学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>wxWidgets</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 16.04 安装CodeBlocks]]></title>
+    <url>%2F2016%2F10%2F14%2F2016-10-14-Ubuntu-16-04-%E5%AE%89%E8%A3%85CodeBlocks%2F</url>
+    <content type="text"><![CDATA[CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。 在Ubuntu 16.04下就比较简单了。 传统流程是这样的， 按快捷键Ctrl + Alt + T打开命令行终端：12sudo apt-get updatesudo apt-get install codeblocks 然后直接在任务栏搜索框上搜索CodeBlocks就能打开使用。 上面安装的版本一般是13.12算是比较老的版本了，而现在最新的稳定版是16.01。 CodeBlocks 13.12也不是不能用，当然我也只是用了几分钟，就发现了在有激活项目的时候，也就是在写代码的时候，打开Setting的Editer会卡死。试了几次都是这样，无解。而且，还有一个致命的问题，不能自动缩进。当然这个不能缩进不是bug，只是我们没装全功能。 于是找了下，找到了解决问题的办法，在这个网址：https://launchpad.net/~damien-moore/+archive/ubuntu/codeblocks-stable （这个网址可以在CodeBlocks官网的Dowload页面找到） 首先将软件源添加进来，就是运行以下命令12sudo add-apt-repository ppa:damien-moore/codeblocks-stablesudo apt-get update 完成之后，不管是不是已经安装了CodeBocks，使用命令1sudo apt-get install codeblocks 都可以获取最新版本的CodeBlcoks。 获取完成了之后，这个CodeBlocks还是阉割版的。 还需运行以下 命令来把常用的插件装上1sudo apt-get install codeblocks-contrib 然后，重启CodeBlocks就行了。 以下是我个人的喜好： 在CodeBlocks菜单Setting-&gt;Edit-&gt;General settings中可以取消设置Brace completion，这个选项是把括号自动补全取消，括号还是自己打才爽啊。 另外，使用一款好看的字体也是必须的，我个人喜欢Monaco，确实好看。 Moncao下载链接：https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf?raw=true 另外需要注意的是，直接下载双击就能安装。如果没有不能（我就遇到了，直接崩溃，什么字体都装不了），就升级一下，输入命令 sudo apt-get upgrade 升级下软件就能打开了。 参考博客：codeblocks缩进等设置ubuntu16.04安装monaco字体]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>日常配置</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[献给世界]]></title>
+    <url>%2F2015%2F09%2F05%2F2015-09-05-%E7%8C%AE%E7%BB%99%E4%B8%96%E7%95%8C%2F</url>
+    <content type="text"><![CDATA[一入编程深似海，真系坑爹。 高考完了，爽吧。确实爽，有接近三个月的暑假。高中三年，无数次幻想这个暑假，充斥着自由、疯狂与青春。也做过无数计划。但最终，赶不上变化。 假期一有空就疯狂地写代码，写累了就睡觉，醒来又写，C++果然是学不完的语言。 很多人说，MFC已经是十几年前的玩意，已经不值得学。然而，我还是去了解了下。相比WIN32 API编程，便捷了不少，但是代码也很乱，而VC6这个落后于时代的IDE自身也有不少毛病，经常各种无理由错误。MFC确实是对API简单包装，很多函数就少了个句柄，因为MFC内部维护。Qt很优雅，也确实庞大。其实一开始是看上Qt的，也是由于生成的体积过大，转MFC，没想到也是巨坑。又要转回Qt了，当然MFC也没白学，至少简单了解了下。 李桃大师曾言：如果你不知道要去哪里，通常哪里都去不了。确实如此，在假期有段时间烦躁无比，明明知道自己很多不会，很多想学，却还是无从下手。我不知道目标在哪，不知道自己下一步想做什么。通常，这个时候是最苦恼的。因为什么都想学，贪多嚼不烂。学着别人，听了几首轻音乐，看看天空，放松心情，然后找出最喜欢的，学下去。然后烦恼就此解除。 我也不是代码狂人，天天看代码也确实会腻，每个星期都有不想写代码的7天。当把《汇编语言》看完时，整个人都疯了，汇编简直变态。汇编是非常底层的语言，用汇编写代码软件效率提上了，但写代码的效率不是那么理想。幸好是写小程序，不然彻底抓狂。在今天有C语言给我们用简直幸福，感谢D.M.Ritchie，感谢世界，Hello World！ 假期复习了C Primer Plus，复习了C++ Primer Plus，也看了C陷阱和缺陷。((void()())0)();这句最为印象深刻，一眼看去高大上（咳咳，其实可用于装逼）。然后整个人就叼了起来，偶尔用来吓吓新手。 虽然假期学了不少，但始终时间不够用，有时晚上直接搞到凌晨。还有非常非常多的东西没学，有些至少连入门都没有做到。路途非常遥远，也将很艰辛，但无所畏惧。有句话说得很好，既然选择了远方，便只顾风雨兼程，既然目标是地平线，留给世界的只能是背影。 编程方面就这么多。 大学开学之际，写点东西。至逝去的三个月，至学生时代最长假期。 ——2015.09.05 于家中 博主简介： 本人擅长 Ai、Fw、Fl、Br、Ae、Pr、Id、Ps 等软件的安装与卸载，精通 CSS、JavaScript、PHP、ASP、C、C++、C#、Java、Ruby、Perl、Lisp、Python、Objective-C、ActionScript、Pascal 等单词的拼写，熟悉 Windows、Linux、OS X、Android、iOS、WP8 等系统的开关机。]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HDU 1004 Let the Balloon Rise]]></title>
+    <url>%2F2015%2F07%2F06%2F2015-07-06-HDU-1004-Let-the-Balloon-Rise%2F</url>
+    <content type="text"><![CDATA[Let the Balloon RiseTime Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)Total Submission(s): 87994 Accepted Submission(s): 33308 Problem DescriptionContest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges’ favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result. This year, they decide to leave this lovely job to you. InputInput contains multiple test cases. Each test case starts with a number N (0 &lt; N &lt;= 1000) – the total number of balloons distributed. The next N lines contain one color each. The color of a balloon is a string of up to 15 lower-case letters. A test case with N = 0 terminates the input and this test case is not to be processed. OutputFor each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case. Sample Input12345678910115greenredblueredred3pinkorangepink0 Sample Output···redpink··· Idea给出各种颜色（字符串），求颜色相同最多的。原题地址：http://acm.hdu.edu.cn/showproblem.php?pid=1004 Code12345678910111213141516171819202122232425262728293031323334353637#include &lt;stdio.h&gt;#include &lt;string.h&gt;#define MAXN 1005int main(void)&#123; int n; int i, j, max; int a[MAXN]; char c[MAXN][16]; //freopen("input.txt", "r", stdin); scanf("%d", &amp;n); while(n &gt; 0) &#123; memset(a, 0, sizeof(int) * MAXN); for(i = 0; i &lt; n; i++) &#123; scanf("%s", c[i]); ++a[i]; for(j = 0; j &lt; i; j++) &#123; if(strcmp(c[i], c[j]) == 0) &#123; ++a[j]; break; &#125; &#125; &#125; max = 0; for(i = 0; i &lt; n; i++) &#123; if(a[max] &lt; a[i]) max = i; &#125; printf("%s\n", c[max]); scanf("%d", &amp;n); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HDU 1003 Max Sum]]></title>
+    <url>%2F2015%2F07%2F05%2F2015-07-05-HDU-1003-Max-Sum%2F</url>
+    <content type="text"><![CDATA[Max SumTime Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)Total Submission(s): 173855 Accepted Submission(s): 40493 Problem DescriptionGiven a sequence a[1],a[2],a[3]……a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + (-1) + 5 + 4 = 14. InputThe first line of the input contains an integer T(1&lt;=T&lt;=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1&lt;=N&lt;=100000), then N integers followed(all the integers are between -1000 and 1000). OutputFor each test case, you should output two lines. The first line is “Case #:”, # means the number of the test case. The second line contains three integers, the Max Sum in the sequence, the start position of the sub-sequence, the end position of the sub-sequence. If there are more than one result, output the first one. Output a blank line between two cases. Sample Input12325 6 -1 5 4 -77 0 6 -1 1 -6 7 -5 Sample Output12345Case 1:14 1 4Case 2:7 1 6 Idea求最大子数组，要注意的是全是0和负数的情况（被坑了一下）原题地址：http://acm.hdu.edu.cn/showproblem.php?pid=1003 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include &lt;stdio.h&gt;#define MAXN 100005typedef struct&#123; int s, l, r; &#125;Sum;Sum MaxSub(int a[], int n);int main(void)&#123; int ar[MAXN], c, n, i, j; Sum x = &#123;0, 0, 0&#125;; //freopen("input.txt", "r", stdin); //freopen("output.txt", "w", stdout); scanf("%d", &amp;c); for(i = 1; i &lt;= c; i++) &#123; scanf("%d", &amp;n); for(j = 1; j &lt;= n; j++) scanf("%d", &amp;ar[j]); x = MaxSub(ar, n); printf("Case %d:\n%d %d %d", i,x.s, x.l, x.r); if(i != c) printf("\n\n"); else printf("\n"); &#125;&#125;Sum MaxSub(int a[], int n)&#123; int i, s = 0, l = 1, r = 1, b; Sum sum = &#123;a[1], 0, 0&#125;; for(i = 1; i &lt;= n; i++) &#123; if(s &gt;= 0) &#123; s += a[i]; if(a[i] &gt; 0) r = i; &#125; else &#123; s = a[i]; r = l = i; &#125; if(s &gt;= sum.s) &#123; sum.s = s; sum.l = l; sum.r = r; &#125; &#125; return sum;&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HDU 1002 A + B Problem II]]></title>
+    <url>%2F2015%2F07%2F04%2F2015-07-04-HDU-1002-A-B-Problem-II%2F</url>
+    <content type="text"><![CDATA[A + B Problem IITime Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)Total Submission(s): 257918 Accepted Submission(s): 49865 Problem DescriptionI have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A + B. InputThe first line of the input contains an integer T(1&lt;=T&lt;=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000. OutputFor each test case, you should output two lines. The first line is “Case #:”, # means the number of the test case. The second line is the an equation “A + B = Sum”, Sum means the result of A + B. Note there are some spaces int the equation. Output a blank line between two test cases. Sample Input12321 2112233445566778899 998877665544332211 Sample Output12345Case 1:1 + 2 = 3Case 2:112233445566778899 + 998877665544332211 = 1111111111111111110 Idea原题传送门：http://acm.hdu.edu.cn/showproblem.php?pid=1002新手必做题，简单的高精度加法，写了两个代码都AC了，第一个快些，第二个好理解些 Code11234567891011121314151617181920212223242526272829303132333435363738#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;#define MAX 1005int main(void)&#123; int n, i = 1, n1, n2, k, j, p, q, x, m; char a[MAX], b[MAX], c[MAX]; //freopen("input.txt", "r", stdin); //freopen("output.txt","w", stdout); scanf("%d", &amp;n); while(n) &#123; scanf("%s %s", a, b); printf("Case %d:\n%s + %s = ", i, a, b); n1 = strlen(a) - 1; n2 = strlen(b) - 1; k = x = 0; while( n1 &gt;= 0 || n2 &gt;= 0) &#123; p = n1 &gt;= 0 ? a[n1--] - '0' : 0; q = n2 &gt;= 0 ? b[n2--] - '0' : 0; m = p + q + x; x = m / 10; m = m % 10; c[k++] = m + '0'; &#125; for(j = k - 1; j &gt;=0; j--) printf("%c", c[j]); i++; if(n != 1) printf("\n\n"); else printf("\n"); n--; &#125; return 0;&#125; Code21234567891011121314151617181920212223242526272829#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;#define MAX 1015void Add(char *a, char *b, char *c);int main(void)&#123; int n; int i; char s1[MAX], s2[MAX], s3[MAX]; //freopen("input.txt", "r", stdin); //freopen("output.txt","w", stdout); scanf("%d", &amp;n); //while(getchar() != '\n') continue; for(i = 1; i &lt;= n; i++) &#123; scanf("%s %s", s1, s2); Add(s1, s2, s3); printf("Case %d:\n%s + %s = %s", i, s1, s2, s3); if(i == n) printf("\n"); else printf("\n\n"); &#125; return 0; &#125; void Add(char *a, char *b, char *c) &#123; int i = strlen(a) - 1, j = strlen(b) - 1, k = 0; int x = 0, m = 0; char t[MAX]; int p, q; while( i &gt;= 0 || j &gt;= 0) &#123; p = i &gt;= 0 ? a[i--] - '0' : 0; q = j &gt;= 0 ? b[j--] - '0' : 0; m = p + q + x; x = m / 10; m = m % 10; t[k++] = m + '0'; &#125; for(i = 0; i &lt; k; i++) c[i] = t[k - i - 1]; c[k] = '\0';&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[归并排序(Merge Sort)]]></title>
+    <url>%2F2015%2F06%2F24%2F2015-06-24-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-Merge-Sort%2F</url>
+    <content type="text"><![CDATA[归并排序是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（当然这个是比较业余的说法，如果想得到准确答案，问度娘。）归并排序的时间复杂度为O(nlgn)，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。 算法原理1.二路归并排序是将两个已经有序的数组重新组合到一个有序的数组。递归部分：2.因为一个随机的数组分成两个数组（假设A和B）之后一般（A和B）不会是有序的，所以递归求解。3.直到最后一个元素（一个元素是不用排序的），一个元素看成一个数组是有序的，所以递归返回。非递归部分：4.申请两个临时数组，用来存放分开的两组数据。5.两个临时数组比较，哪边小就从哪边抽出元素放回原数组。（这里指的是升序排序）6.直到没有。（为了少写代码，设置两个无穷大的数在数组的最后，效果自己模拟下看看） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &lt;stdio.h&gt;#include &lt;limits.h&gt; /*INT_MAX支持*/#define MAXN 100#define MAX INT_MAXvoid MergeSort(int a[], int p, int r);void Merge(int a[], int p, int q, int r);int main(void)&#123; int i, n; int ar[MAXN]; freopen("input.txt", "r", stdin); /*重定向文件到标准输入输出*/ freopen("output.txt", "w", stdout); scanf("%d", &amp;n); /*读取数据个数*/ for(i = 1; i &lt;= n; i++) /*读取数据*/ &#123; scanf("%d", &amp;ar[i]); &#125; MergeSort(ar, 1, n); /*调用归并排序*/ for(i = 1; i &lt;= n; i++) /*输出数据*/ &#123; printf("%d ", ar[i]); if(i % 10 == 0) /*每行10个*/ putchar('\n'); &#125; return 0;&#125;void MergeSort(int a[], int p, int r)&#123; int q; if(p &lt; r) &#123; q = (p + r) / 2; /*分治策略*/ MergeSort(a, p, q); /*递归 不断将数组分成两部分，直到没法分*/ MergeSort(a, q + 1, r); Merge(a, p, q, r); &#125;&#125;void Merge(int a[], int p, int q, int r)&#123; int i, j, k; int m[q - p + 2]; /*变长数组(VLA)*/ int n[r - q + 1]; /*C99特性：GCC编译需加-std=c99*/ for(i = 0; i &lt; q - p + 1; i++) /*将前a[p...q]复制到临时数组*/ m[i] = a[p + i]; for(j = 0; j &lt; r - q; j++) /*将前a[q+1...r]复制到临时数组*/ n[j] = a[q + 1 + j]; m[i] = n[j] = MAX; /*定义为无穷大的数*/ i = j = 0; for( k = p; k &lt;= r; k++) /*两组已经有序的数据开始排序，合成一组*/ &#123; if(m[i] &gt; n[j]) a[k] = n[j++]; else a[k] = m[i++]; &#125;&#125; 测试数据输入1234565077 30 48 66 25 86 84 56 27 10 58 64 4 47 2 41 27 88 90 97 73 71 81 91 16 26 37 87 93 21 88 41 58 26 7 12 62 96 78 16 83 41 18 6 6 60 16 87 9 74 输出123452 4 6 6 7 9 10 12 16 16 16 18 21 25 26 26 27 27 30 37 41 41 41 47 48 56 58 58 60 62 64 66 71 73 74 77 78 81 83 84 86 87 87 88 88 90 91 93 96 97]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[POJ 1804 Brainman]]></title>
+    <url>%2F2015%2F06%2F23%2F2015-06-23-POJ-1804-Brainman%2F</url>
+    <content type="text"><![CDATA[BrainmanTime Limit: 1000MS Memory Limit: 30000KTotal Submissions: 8755 Accepted: 4723 DescriptionBackgroundRaymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task. ProblemHere’s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example:Start with: 2 8 0 3swap (2 8) 8 2 0 3swap (2 0) 8 0 2 3swap (2 3) 8 0 3 2swap (8 0) 0 8 3 2swap (8 3) 0 3 8 2swap (8 2) 0 3 2 8swap (3 2) 0 2 3 8swap (3 8) 0 2 8 3swap (8 3) 0 2 3 8 So the sequence (2 8 0 3) can be sorted with nine swaps of adjacent numbers. However, it is even possible to sort it with three such swaps:Start with: 2 8 0 3swap (8 0) 2 0 8 3swap (2 0) 0 2 8 3swap (8 3) 0 2 3 8 The question is: What is the minimum number of swaps of adjacent numbers to sort a given sequence?Since Charlie does not have Raymond’s mental capabilities, he decides to cheat. Here is where you come into play. He asks you to write a computer program for him that answers the question. Rest assured he will pay a very good prize for it. InputThe first line contains the number of scenarios.For every scenario, you are given a line containing first the length N (1 &lt;= N &lt;= 1000) of the sequence,followed by the N elements of the sequence (each element is an integer in [-1000000, 1000000]). All numbers in this line are separated by single blanks. OutputStart the output for every scenario with a line containing “Scenario #i:”, where i is the number of the scenario starting at 1. Then print a single line containing the minimal number of swaps of adjacent numbers that are necessary to sort the given sequence. Terminate the output for the scenario with a blank line. Sample Input1234544 2 8 0 310 0 1 2 3 4 5 6 7 8 96 -42 23 6 28 -100 655375 0 0 0 0 0 Sample Output1234567891011Scenario #1:3Scenario #2:0Scenario #3:5Scenario #4:0 Idea这题求逆序对，可以用改动归并排序来解决。POJ上的题目，原题地址：http://poj.org/problem?id=1804 Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &lt;stdio.h&gt;#define MAXN 1005#define MAX 1000005void MergeInversion(int a[], int p, int r);void Merge(int a[], int p, int q, int r);int ans;int main(void)&#123; int i , j, n, x; int ar[MAXN]; //freopen("input.txt", "r", stdin); scanf("%d", &amp;x); for(i = 1; i &lt;= x; i++) &#123; ans = 0; scanf("%d", &amp;n); for(j = 1; j &lt;= n; j++) scanf("%d", &amp;ar[j]); MergeInversion(ar, 1, n); printf("Scenario #%d:\n%d\n\n", i, ans); &#125;&#125;void MergeInversion(int a[], int p, int r)&#123; int q; if(p &lt; r) &#123; q = (p + r) / 2; MergeInversion(a, p, q); MergeInversion(a, q + 1, r); Merge(a, p, q, r); &#125;&#125;void Merge(int a[], int p, int q, int r)&#123; int i, j, k; int m[q - p + 2], n[r - q + 1]; for(i = 0; i &lt; q - p + 1; i++) m[i] = a[p + i]; for(j = 0; j &lt; r - q; j++) n[j] = a[q + j + 1]; m[i] = n[j] = MAX; i = j = 0; for( k = p; k &lt;= r; k++) &#123; if(m[i] &lt;= n[j]) a[k] = m[i++]; else &#123; a[k] = n[j++]; ans += q - (p + i) + 1; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[选择排序（Selection Sort）]]></title>
+    <url>%2F2015%2F06%2F21%2F2015-06-21-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%EF%BC%88Selection-Sort%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[选择排序是经典排序的一种，最差的时间复杂度为O(n^2)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。 代码如下：12345678910111213141516171819202122232425262728293031323334353637#include &lt;stdio.h&gt;#define MAX 100void Select(int a[], int n);int main(void)&#123; int ar[MAX], n; int i; freopen("input.txt", "r", stdin); /*重定向标准输入输出*/ freopen("output.txt", "w", stdout); scanf("%d", &amp;n); /*写入数据*/ for(i = 1; i &lt;= n; i++) scanf("%d", &amp;ar[i]); Select(ar, n); /*排序*/ for(i = 1; i &lt;= n; i++) /*输出数据*/ &#123; printf("%d ", ar[i]); if(i % 10 == 0) putchar('\n'); &#125; return 0;&#125;void Select(int a[], int n) /*待排序数组a[1...n]*/&#123; int min, i, j, t; for(i = 1; i &lt;= n; i++) &#123; min = i; /*从a[i...n]选出最小值*/ for(j = i + 1; j &lt;= n; j++) &#123; if(a[min] &gt; a[j]) min = j; &#125; if(min != i) /*交换*/ &#123; t = a[min]; a[min] = a[i]; a[i] = t; &#125; &#125;&#125; 测试数据：输入：1234565013 95 29 62 69 34 74 38 29 78 29 67 98 22 27 13 92 26 94 98 28 62 2 27 23 92 87 96 11 93 25 94 6 15 35 63 61 88 80 5 39 47 36 35 26 83 39 77 25 61 输出：123452 5 6 11 13 13 15 22 23 25 25 26 26 27 27 28 29 29 29 34 35 35 36 38 39 39 47 61 61 62 62 63 67 69 74 77 78 80 83 87 88 92 92 93 94 94 95 96 98 98]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[插入排序的C语言实现]]></title>
+    <url>%2F2015%2F06%2F20%2F2015-06-20-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%9A%84C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[插入排序，稳定排序的一种,平均时间复杂度为O(n^2),它的代码量很小，对于处理小数据的排序还是可以的。排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。 算法描述如下（摘自百度百科）：⒈ 从第一个元素开始，该元素可以认为已经被排序⒉ 取出下一个元素，在已经排序的元素序列中从后向前扫描⒊ 如果该元素（已排序）大于新元素，将该元素移到下一位置⒋ 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置⒌ 将新元素插入到下一位置中⒍ 重复步骤2~5 具体代码如下：12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;stdio.h&gt;#define MAX 100void Insert(int [], int);int main(void)&#123; int i = 1; int n; int ar[MAX]; //freopen("input.txt", "r", stdin);/*可以将标准输入输出重定向到文件*/ //freopen("output.txt","w", stdout); scanf("%d", &amp;n); /*读取待排序元素的个数*/ for(i = 1; i &lt;= n; i++) &#123; scanf("%d", &amp;ar[i]); /*读取元素并写入数组中*/ &#125; Insert(ar, n); /*排序*/ for(i = 1; i &lt;= n; i++) &#123; printf("%d ", ar[i]); /*显示排序后的数据*/ if(i % 10 == 0) putchar('\n'); /*输出每10个元素一行*/ &#125; return 0;&#125;void Insert(int a[], int n) //a数组有效数据是下标1...n&#123; int i, j; for(i = 2; i &lt;= n; i++) &#123; a[0] = a[i]; /*用a[0]作为临时保存a[i]的变量*/ j = i-1; while(a[0] &lt; a[j]) /*从a[i - 1]开始到a[0]逐个检查，并将元素推后*/ a[j + 1] = a[j--]; a[j + 1] = a[0]; /*找到合适位置，将元素插入*/ &#125; &#125; /* void Insert(int a[], int n) //递归版本 &#123; int i; if(n &gt; 1) &#123; Insert(a, n - 1); i = n - 1; a[0] = a[n]; while(a[0] &lt; a[i]) a[i + 1] = a[i--]; a[i + 1] = a[0]; &#125;&#125;*/ 测试数据:输入：123456505 17 18 97 72 71 62 84 66 38 25 68 86 57 45 5 70 51 52 97 35 4 55 24 62 63 33 64 84 75 26 32 69 51 67 26 53 87 18 33 33 94 2 84 76 93 19 76 53 81 输出：123452 4 5 5 17 18 18 19 24 25 26 26 32 33 33 33 35 38 45 51 51 52 53 53 55 57 62 62 63 64 66 67 68 69 70 71 72 75 76 76 81 84 84 84 86 87 93 94 97 97]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kruskal算法的C语言实现（并查集版）]]></title>
+    <url>%2F2014%2F02%2F23%2F2014-02-23-Kruskal%E7%AE%97%E6%B3%95%E7%9A%84C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%89%88%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。 首先，文章不是LZ写的，在网上看到比我写的更好的，直接拿过来了。编写程序：对于如下一个带权无向图，给出所有边以及权值，用kruskal算法求最小生成树。样例输入:12345678910111211A B 7A D 5B C 8B D 9B E 7C E 5D E 15D F 6E F 8E G 9F G 11 样例输出:1234567A - D : 5C - E : 5D - F : 6A - B : 7B - E : 7E - G : 9Total:39 代码如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108#include &lt;stdio.h&gt;#include &lt;string.h&gt;#define MAX 100/* 定义边(x,y)，权为w */typedef struct&#123; int x, y; int w;&#125;edge; edge e[MAX];/* rank[x]表示x的秩 */int rank[MAX];/* father[x]表示x的父节点 */int father[MAX];int sum; /* 比较函数，按权值(相同则按x坐标)非降序排序 */int cmp(const void *a, const void *b)&#123; if ((*(edge *)a).w == (*(edge *)b).w) &#123; return (*(edge *)a).x - (*(edge *)b).x; &#125; return (*(edge *)a).w - (*(edge *)b).w;&#125; /* 初始化集合 */void Make_Set(int x)&#123; father[x] = x; rank[x] = 0;&#125; /* 查找x元素所在的集合,回溯时压缩路径 */int Find_Set(int x)&#123; if (x != father[x]) &#123; father[x] = Find_Set(father[x]); &#125; return father[x];&#125; /* 合并x,y所在的集合 */void Union(int x, int y, int w)&#123; if (x == y) return; /* 将秩较小的树连接到秩较大的树后 */ if (rank[x] &gt; rank[y]) &#123; father[y] = x; &#125; else &#123; if (rank[x] == rank[y]) &#123; rank[y]++; &#125; father[x] = y; &#125; sum += w;&#125; /* 主函数 */int main()&#123; int i, n;. int x, y; char chx, chy; //freopen("kruskal.in", "r",stdin); //freopen("kruskal.out", "w", stdout); /* 读取边的数目 */ scanf("%d", &amp;n); getchar(); /* 读取边信息并初始化集合 */ for (i = 0; i &lt; n; i++) &#123; scanf("%c %c %d", &amp;chx, &amp;chy, &amp;e[i].w); getchar(); e[i].x = chx - 'A'; e[i].y = chy - 'A'; Make_Set(i); &#125; /* 将边排序 */ qsort(e, n, sizeof(edge), cmp); sum = 0; for (i = 0; i &lt; n; i++) &#123; x = Find_Set(e[i].x); y = Find_Set(e[i].y); if (x != y) &#123; printf("%c - %c : %d\n", e[i].x + 'A', e[i].y + 'A', e[i].w); Union(x, y, e[i].w); &#125; &#125; printf("Total:%d\n", sum); //system("pause"); return 0; &#125; 文章作者：姜南(Slyar) 文章来源：Slyar Home]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[浅谈const关键字与指针、define、typedef混用]]></title>
+    <url>%2F2014%2F02%2F08%2F2014-02-08-%E6%B5%85%E8%B0%88const%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E6%8C%87%E9%92%88%E3%80%81define%E3%80%81typedef%E6%B7%B7%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。1234const int * a = &amp;b;int const * a = &amp;b;int * const a = &amp;b;const int * const a = &amp;b; 区分它们是非常简单的，只需要下面记住两条规则： 如果const位于星号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；如果const位于星号的右侧，const就是修饰指针本身，即指针本身是常量。于是乎，刚才的四条声明也就容易区分了。12345const int * a = &amp;b; //const在*的左边 ,用来修饰a所指向的地址的值,*a为常量int const * a = &amp;b; //这句与上句是相同的，const在*的左边int * const a = &amp;b; //const在*的右边 那么const修饰的是a本身, a是常量const int * const a = &amp;b; //a与*a均为常量，都不能被改变 如果还是不明白，请上机测试下，分别给a和*a赋值，常量一般情况是不能被改变的（当然有特殊情况，以后再说）。 我这里再说下const与define、typedef，是否跟我们想象的那样。1234567typedef int* pint; #define PINT int*int k = 5;const pint m = &amp;k;const PINT n= &amp;k; 我们用一个完整的程序（其实有错误，等下就知道了）来测试。123456789101112131415#include &lt;stdio.h&gt;typedef int* pint; #define PINT int*int k = 5;const pint m = &amp;k; const PINT n= &amp;k; int main(void)&#123; int b = 2; *m = 3; *n = 3; m = &amp;b; n = &amp;b; return 0; &#125; 放上面的代码上去测试，我们看到编译出错了,位置是1*n = 3; 很明显*n是不可改变的，我们自己也可以很容易推是我出来。1234#define PINT int*int k = 5;const PINT n= &amp;k; //等价于const int * n = &amp;k; //const PINT n= &amp;k; 被预处理为const int * n = &amp;k; 我们接着这把*n = 3;注释掉，再编译一次，发现又出错了，错误的地方是1m = &amp;b; 也就是说明指针m是常量，这倒是出乎意料了，1234typedef int* pint;int k = 5;const pint m = &amp;k; const int* m = &amp;k; //这两句竟然不是相等的！为什么呢？ 其实这里很多人把typedef当成了define。typedef不是define，typedef是别名。我们仔细看下pint, pint是指针类型，const的指针当然是int *const1234typedef int* pint;int k = 5;const pint m = &amp;k; //相当于int* const m = &amp;k; //typedef不是宏代换，ping是个指针类型，const的指针是int *const 好了，其实const关键字与指针、define、typedef混用也不是太麻烦嘛。]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Prim算法的C语言实现]]></title>
+    <url>%2F2014%2F02%2F01%2F2014-02-01-Prim%E7%AE%97%E6%B3%95%E7%9A%84C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。 以上摘自维基百科。我简略地说下算法思想（或许不大严谨，想要看专业严谨版的朋友自行百度）： 1.在把生成树看成一个集合（开始集合为空，到各个结点的距离当然未知）2.结点与集合之间的权值可以看成结点到集合距离3.将第一个结点加入集合，并初始化集合与其他结点的距离4.搜索集合与结点最小的权值（距离），并把这点加入集合5.更新集合与结点之间的距离6.不断重复4和5步，直到所有的结点都加入了集合（实际上把一个结点加入集合的时候，可以记录这个结点的父节点，也就是前驱，这么说吧，当找到一个与集合最小的结点的时候，他与集合中哪一结点的距离最小，把他记录来，作为生成树的路径） 算法实现如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;stdio.h&gt;#define MAXN 100#define INF 100001/*INF表示不存在边的长度，用一个很大的数表示它*/void prim(int [][MAXN], int [], int); //函数原型int main(void)&#123; int i, j, t, n; int w[MAXN][MAXN], fa[MAXN]; /*w是邻接矩阵，fa[x]表示是结点x的父结点）*/ //freopen("prim.in", "r", stdin); //打开文件 //freopen("prim.out", "w", stdout); scanf("%d", &amp;n); for(i = 1; i &lt;= n; i++) for(j = 1; j &lt;= n; j++ ) &#123; scanf("%d", &amp;t); //数据读入 w[i][j] = (t == 0) ? INF : t; &#125; prim(w, fa, n); //调用函数 for(i = 2; i &lt;= n; i++) //打印结果 printf("%d---&gt;%d\n", i, fa[i]); return 0;&#125;void prim(int w[][MAXN], int fa[], int n)&#123; int i, j, m, k; int d[MAXN]; /*d[j]可以理解成结点j到生成树(集合)的距离，它的最终值是w[j][fa[j]]*/ for(j = 1; j &lt;= n; j++) &#123; d[j] = (j == 1 ? 0 : w[1][j]); /*将第一个结点加入集合，并初始化集合与其他结点的距离*/ fa[j] = 1; /*当前集合中有且只有一个结点1，其他结点暂时未加入集合，所以没有父结点，就先姑且初始化成1*/ &#125; for(i = 2; i &lt;=n; i++) &#123; m = INF; for(j = 1; j &lt;= n; j++) if(d[j] &lt;= m &amp;&amp; d[j] != 0) m = d[k = j]; /*选取与集合距离最小的边*/ d[k] = 0; /*0在这里表示与集合没有距离，也就是说赋值0就是将结点k添加到集合中*/ for(j = 1; j &lt;= n; j++) /*对刚加入的结点k进行扫描，更新d[j]的值*/ if(d[j] &gt; w[k][j] &amp;&amp; d[j] != 0) &#123; d[j] = w[k][j]; fa[j] = k; &#125; &#125;&#125; 输入样例：123456760 7 6 2 0 07 0 0 3 4 06 0 0 5 0 32 3 5 0 5 40 4 0 5 0 60 0 3 4 6 0 输出样例：123452---&gt;43---&gt;64---&gt;15---&gt;26---&gt;4 大家可以新建prim.txt把输入样例写进去，改名成prim.in，然后解除注释这两行：12freopen("prim.in", "r", stdin); //打开文件freopen("prim.out", "w", stdout); 输出在prim.out中，用记事本打开可以看到结果。这样方便调试。]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[转载]数组名与指针]]></title>
+    <url>%2F2014%2F01%2F28%2F2014-01-28-%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%8C%87%E9%92%88%2F</url>
+    <content type="text"><![CDATA[指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以”深入探索”的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！ 魔幻数组名请看程序（本文程序在WIN32平台下编译）：123456789#include &lt;stdio.h&gt; //c语言版本int main(void)&#123; char str[10]; char *pStr = str; printf("%d\n", sizeof(str)); //输出10 printf("%d\n", sizeof(pStr)); //输出4 return 0;&#125; 1、数组名不是指针我们先来推翻”数组名就是指针”的说法，用反证法。 证明 数组名不是指针 假设：数组名是指针； 则：pStr和str都是指针； 因为：在WIN32平台下，指针长度为4； 所以：上面两个输出都应该为4； 实际情况是：第一个输出10，第二个输出4； 所以：假设不成立，数组名不是指针 2、数组名神似指针上面我们已经证明了数组名的确不是指针，但是我们再看看这句char *pStr = str;。它将数组名直接赋值给指针，这显得数组名又的确是个指针！ 我们还可以发现数组名显得像指针的例子：1234567891011#include &lt;stdio.h&gt;#include &lt;string.h&gt;int main(void)&#123; char str1[10] = "I Love U"; char str2[10]; strcpy(str2, str1); printf("String array 1: %s\n", str1); printf("String array 2: %s\n", str2); return 0;&#125; 标准C库函数strcpy的函数原形中能接纳的两个参数都为char型指针，而我们在调用中传给它的却是两个 数组名！函数输出：12string array 1: I Love Ustring array 2: I Love U 数组名再一次显得像指针！ 既然数组名不是指针，而为什么到处都把数组名当指针用？于是乎，许多程序员得出这样的结论：数组名(主)是(谓)不是指针的指针(宾)。 整个一魔鬼。 揭密数组名现在到揭露数组名本质的时候了，先给出三个结论： (1)数组名的内涵在于其指代实体是一种数据结构，这种数据结构就是数组； (2)数组名的外延在于其可以转换为指向其指代实体的指针，而且是一个指针常量； (3)指向数组的指针则是另外一种变量类型（在WIN32平台下，长度为4），仅仅意味着数组的存放地址！ 1、数组名指代一种数据结构：数组 现在可以解释为什么第1个程序printf(“%d\n”, sizeof(str));的输出为10的问题，根据结论1，数组名str的内涵为一种数据结构，即一个长度为10的char型数组，所以sizeof(str)的结果为这个数据结构占据的内存大小：10字节。 再看：12int intArray[10];printf("%d\n", sizeof(intArray)); /*输出结果为40（整型数组占据的内存空间大小）*/ 2、数组名可作为指针常量 根据结论2，数组名可以转换为指向其指代实体的指针，所以程序1中的第5行数组名直接赋值给指针，程序2中strcpy(str2, str1);直接将数组名作为指针形参都可成立。 下面的程序成立吗？12int intArray[10];intArray++; 读者可以编译之，发现编译出错。原因在于，虽然数组名可以转换为指向其指代实体的指针，但是它只能被看作一个指针常量，不能被修改。 而指针，不管是指向结构体、数组还是基本数据类型的指针，都不包含原始数据结构的内涵，在WIN32平台下，sizeof操作的结果都是4。顺便纠正一下许多程序员的另一个误解。许多程序员以为sizeof是一个函数，而实际上，sizeof是一个操作符，不过其使用方式看起来的确太像一个函数了。语句sizeof(int)就可以说明sizeof的确不是一个函数，因为函数接纳形参（一个变量），世界上没有一个C/C++函数接纳一个数据类型（如int）为”形参”。 3、数据名可能失去其数据结构内涵 到这里似乎数组名魔幻问题已经宣告圆满解决，但是平静的湖面上却再次掀起波浪。请看下面一段程序：123456789101112#include &lt;stdio.h&gt;void arrayTest(char []);int main(void)&#123; char str1[10] = "I Love U"; arrayTest(str1); return 0;&#125;void arrayTest(char str[])&#123; printf("%d\n", sizeof(str)); //输出结果为4&#125; 程序的输出结果为4。不可能吧？ 一个可怕的数字，前面已经提到其为指针的长度! 结论1指出，数据名内涵为数组这种数据结构，在arrayTest函数体内，str是数组名，那为什么sizeof的结果却是指针的长度？这是因为： (1)数组名作为函数形参时，在函数体内，其失去了本身的内涵，仅仅只是一个指针； (2)很遗憾，在失去其内涵的同时，它还失去了其常量特性，可以作自增、自减等操作，可以被修改。所以，数据名作为函数形参时，其全面沦落为一个普通指针！它的贵族身份被剥夺，成了一个地地道道的只拥有4个字节的平民。 本文章来自互联网，本人仅作稍加修改。]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Dijkstra算法的C语言实现]]></title>
+    <url>%2F2014%2F01%2F26%2F2014-01-26-Dijkstra%E7%AE%97%E6%B3%95%E7%9A%84C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。 思想：设置顶点集合S，首先将源点加入集合，然后依据源点到其他顶点的路径的长度，选择路径长度最小的边加入集合，根据所加入的顶点更新源点到其他顶点的路径长度，然后再选取长度最小的边的顶点，依次来做，直到所有的顶点路径都加入集合，也就是求解出了到达所有顶点的路径长度。 算法（文字版）： 清除所有点的标号1234567设d[0]=0，其他d[i]=INF（INF是一个很大的数，用以表示不存在的路径）循环n次&#123; 在所有未标号的结点中，选出d值最小的结点x 给结点x标记 对于从x出发的所有边(x, y)，更新d[y] = min&#123;d[y], d[x] + w[x][y]&#125;&#125; 完整代码：12345678910111213141516171819202122232425262728293031323334353637#include &lt;stdio.h&gt;#include &lt;string.h&gt;#define INF 10000/*INF表示不存在边的长度，用一个很大的数表示它*/void dijkstra(int w[][21], int [], int n);int main(void)&#123; int n, i, j; int w[21][21], d[21]; //freopen("dijkstra.in", "r", stdin); //打开文件 //freopen("dijkstra.out", "w", stdout); scanf("%d", &amp;n); //读入n for(i = 0; i &lt; n; i++) for(j = 0; j &lt; n; j++) &#123; scanf("%d", &amp;w[i][j]); //读入数据，不存在的边是0 if(w[i][j] == 0) w[i][j] = INF; //把不存在的边0，改成一个很大的数字 &#125; dijkstra(w, d, n); //调用算法函数 for(i = 0; i &lt; n; i++) //打印结果 printf("%d ", d[i]); return 0;&#125;void dijkstra(int w[][21], int d[], int n)&#123; int v[21]; int i, y, x, m; memset(v, 0, sizeof(v)); //v作为是否访问的标志，0表示没有访问，1表示已经访问 for(i = 0; i &lt; n; i++) d[i] = (i == 0 ? 0 : INF); for(i = 0; i &lt; n; i++) &#123; m = INF; for(y = 0; y &lt; n; y++) if(!v[y] &amp;&amp; d[y] &lt;= m) m = d[x = y]; v[x] = 1; for(y = 0; y &lt; n; y++) if(d[y] &gt; d[x] + w[x][y]) d[y] = d[x] + w[x][y]; &#125;&#125; 输入样例：12345650 4 29 4 02 0 0 0 30 6 0 0 40 0 0 0 60 0 4 0 0 输出样例：10 4 11 4 7 大家可以新建dijkstra.txt把输入样例写进去，改名成dijkstra.in，然后解除注释这两行：12freopen("dijkstra.in", "r", stdin); //打开文件freopen("dijkstra.out", "w", stdout); 输出在dijkstra.out中，用记事本打开可以看到结果。这样方便调试。]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[可变参数的使用]]></title>
+    <url>%2F2014%2F01%2F23%2F2014-01-23-%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。例如：1int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：12printf(“%d%d”, a, b);printf(“%d%d”,a, b, c); 以上两个调用都能正常返回结果。其实他就是一个可变参数函数。 可变参数函数是指一个函数拥有不定引数，即是它接受一个可变量目的参数。在C语言中，C标准函式库的stdarg.h标头档定义了提供可变参数函数使用的宏。在C++，应该使用标头档cstdarg。 stdarg.h数据类型 类型名称 描述 相容 va_list 用来保存宏va_arg与宏va_end所需信息 C89 stdarg.h宏 巨集名称 描述 相容 va_start 使va_list指向起始的参数 C89 va_arg 检索参数 C89 va_end 释放va_list C89 va_copy 拷贝va_list的内容 C99 函数printf()的声明是这样的：int printf(char *fmt, …); 后面“…”表示表示参数表中参数的数量和类型都是可变的。 我们看例子：123456789101112#include &lt;stdarg.h&gt;//必须的头文件double average(int count, ...)&#123; va_list ap; int j; double tot = 0; va_start(ap, count); //使va_list指向起始的参数 for(j=0; j&lt;count; j++) tot+=va_arg(ap, double); //检索参数，必须按需要指定类型 va_end(ap); //释放va_list return tot/count;&#125; va_list是一个类型，va_start，va_arg是宏， va_start原型：va_start(va_list ap, lastarg); //lastarg是函数的最后一个有名参数（如果有多个有名参数）。va_arg原型：类型 va_arg(va_list ap, 类型); //在va_arg里面指定什么类型，就返回什么类型va_end原型：void va_end(va_list ap); //释放ap va_list类型用于声明一个变量（我这里把他写成ap，其实是随意的，就像声明int一样，变量名称当然是随意的），该变量将依次引用各参数。 我们要用va_start初始化va_list才能正常使用。在上面例子里，参数中包含一个有名参数count，和不知道多少个无名的形参（如果有多个有名的参数，我们要把最右边也就是最后一个有名参数传给va_start，例如double average(int count1，int count2, …),我们应该这样va_start(ap, count2);）说是初始化，实际上是把va_list指向第一个无名参数。也就是说，ap被初始化为指向第一个无名参数的指针。 我们接着如何使用，这些没有名字的参数呢。我们可以用va_arg，我们用va_arg来决定返回对象的类型和指针移动的步长。va_arg(ap, double)，指针是ap（用前必须用va_start初始化）,第一次调用它，返回的是第一个无名参数，第二次调用它，返回的是第二个无名参数，以此类推。返回的参数，在形参上是用“…”代替的，每次调用va_arg必须指定一个返回的类型，例如上面的double。 我们在调用完可变参数后,应该使用va_end做一些必要的清理工作，例如va_end(ap); （提示：我们看count这个参数是有名字的，既然有名字，我们就可以用它做一些工作，在上面的例子，他就是用来传递参数的个数，不过既然是普通的有名字参数，就可以用来做任何事情，不仅仅是传递参数个数的作用） 下面的这个例子有名参数就不是传递参数个数了，他是直接当做无名参数的一部分（这么说其实也不好，看个人理解）。1234567891011121314151617181920#include &lt;stdio.h&gt;#include &lt;stdarg.h&gt; void printargs(int arg1, ...) /* 输出所有int类型的参数，直到-1结束 */&#123; va_list ap; int i; va_start(ap, arg1); for (i = arg1; i != -1; i = va_arg(ap, int)) printf("%d ", i); va_end(ap); putchar('n');&#125;int main(void)&#123; printargs(5, 2, 14, 84, 97, 15, 24, 48, -1); printargs(84, 51, -1); printargs(-1); printargs(1, -1); return 0;&#125; 这个程序产生输出:]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用字符串输入]]></title>
+    <url>%2F2014%2F01%2F21%2F2014-01-21-%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5%2F</url>
+    <content type="text"><![CDATA[scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。 代码如下：123456789#include &lt;stdio.h&gt;;int main(void)&#123;char word[40];printf("请输入一个英文句子n");scanf("%s", word);printf("%sn", word);return 0;&#125; 编译运行，输入一个英文句子，比如Zeyes Studio，接着便输出Zeyes]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【2014端午纪念版】抽签系统3.25-Final]]></title>
+    <url>%2F2014%2F01%2F20%2F2014-01-20-%E3%80%902014%E7%AB%AF%E5%8D%88%E7%BA%AA%E5%BF%B5%E7%89%88%E3%80%91%E6%8A%BD%E7%AD%BE%E7%B3%BB%E7%BB%9F3-25-Final%2F</url>
+    <content type="text"><![CDATA[【2014端午纪念版】抽签系统3.25-Final，欢迎使用。 【2014.05.31新版更新说明】1.修复多个小Bug2.部分功能进行小幅度优化 【2014.01.31新版更新说明】1.全面支持WIN7 【2014.01.02旧版更新说明】1.软件更新 完善更新模块，支持一键升级,点击 关于 –&gt; 关于软件 –&gt; 检测更 新即可 （3.22旧版也有自动检测，但只能手动更新）2.安装包更小 将高达70M的语音引擎移动到百度网盘(如不需语音，可不下)语音引擎链接 http://pan.baidu.com/s/1o6lpMe2（具体安装看旧版说明）3.Windows7下需要使用兼容模式才可以正常运行 使用方法：右键单击抽签系统 3.23.exe –&gt; 属性 –&gt; 兼容性 –&gt; 选择以兼容模式运行这个程序(Windows XP (Service Pack 3))4.报错邮箱：admin@zeyes.org官方网站(新)：http://www.zeyes.org/ 【2013.10.05旧版更新说明】1.账号登陆 起始临时账号为admin，密码为admin，区分大小写，该账号不能修改密码 注册账号后不能再使用（除非把自定义的账号全部删除）删除账号方法：进入修改密码界面 输入原密码后 新密码留空即可删除该账号建议：安装完成后，立即注册账号，以防抽签名单恶意修改2.软件更新 在主界面点击关于即可自动检测软件是否需要更新 需等待几秒 检测 完成后即可知道软件是否需要更新3.操作界面美化 全面美化UI，实现仿win8，让界面更美观4.报错邮箱：admin@zeyes.org官方网站：http://www.zeyes.org/ 【2013.04.05旧版更新说明】1.不重复模式 默认为开 选择了则软件没关闭前不会抽到同样的名字（当然，如果名单抽完了还是会重复的，不然就没名单抽了）2.语音引擎 主要是用来读出抽到的名字 默认选择Girl XiaoKun 如果您想选择其他的 则一定要选择能念中文的引擎 如果您没有安装任何中文语音引擎，则可以双击Girl_XiaoKun.exe安装(若压缩包中没有，下载链接：http://pan.baidu.com/s/1o6lpMe2)，这也是软件压缩包比较大的原因3.快捷调出 您可以在“菜单”——“快捷键设置”中设置快捷键 默认为F10在PPT下可以调出4.名单在“菜单”——“抽签名单”中设置 标题在“菜单”——“抽签标题”中设置5.其他的一些选项都是傻瓜化的，一看便懂就不做介绍了6.报错邮箱：admin@zeyes.org 【更新历史】 2014.05.31 抽签系统3.251.修复多个小Bug2.部分功能进行小幅度优化 2014.01.31 抽签系统3.241.增加对WIN7的支持2.修复了几个bug 2014.01.02 抽签系统3.231.完善更新模块（独立分离出一块小程序）2.修复多bug(登陆界面不能按回车登陆，窗口排列不正常等)3.代码优化（精简代码） 2013.10.05 抽签系统3.221.全面优化美化UI2.修复多个bug3.新增更新模块，支持检测更新4.新增账号登陆模块，防止恶意删改抽签名单5.新增支持动态更新抽签名单，更改名单无需重启软件6.优化部分代码 2013.04.05 抽签系统3.11.修复多个bug；2.增加语音库选择；3.全面优化操作界面，人性化操作；4.在名单设置增加修改名单；5.快捷键设置增加即时显示按下的键；6.美化部分按钮7.去除过多的提示和警告8.增加“不重复抽签”按钮9.深度优化核心代码 2012.12.15 抽签系统2.1：1.新增全屏下按预先设定的键时可以呼出；2.修复多个BUG；3.新增托盘图标；4.新增在主界面右键呼出菜单；5.新增语音系统；6.防止软件多开（只能打开一个）； 2012.11 抽签系统1.21.增加批量导入名单； 2012.11 抽签系统1.11.增加名单管理 可以方便地加入名单 删除名单 清空名单； 2012.10 抽签系统1.01.基本抽签功能； 下载地址：抽签系统3.25语音引擎下载链接 http://pan.baidu.com/s/1o6lpMe2（建议下载语音引擎）]]></content>
+      <categories>
+        <category>软件作品</category>
+      </categories>
+      <tags>
+        <tag>泽爷工作室</tag>
+      </tags>
+  </entry>
+</search>
